@@ -1,18 +1,24 @@
-<h1 class="container bg-dark text-white text-center my-4 py-4">ngif show= {{show}}</h1>
+<h1 class="container bg-dark text-white text-center my-4 py-4">[ngClass]</h1>
 
 <div clas="container">
-    <button type="button" class="btn btn-warning" (click)="show=!show">Action</button>
-    <p class="text-info"*ngIf="show; else showDos">Vedadero!!!!Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+
+    <button type="button" class="btn btn-dark mb-3" (click)="activo='primero'">First</button>
+
+    <button type="button" class="btn btn-danger mb-3" (click)="activo='segundo'">Second</button>
+
+    <p class="text-info d-none" [ngClass]="{'d-block':activo=='primero'}">Vedadero!!!!Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
         Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
         when an unknown printer took a galley of type and scrambled it to make a type specimen book.
         It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged.</p>
+        remaining essentially unchanged.
+    </p>
 
-        <ng-template #showDos>
-            <p class="text-danger">Falso!!!!! It was popularised in the 1960s with the release of Letraset sheets containing Lorem 
-                Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker 
-                including versions of Lorem Ipsum.</p>
-        </ng-template>
+    <p class="text-danger d-none" [ngClass]="{'d-block':activo=='segundo'}">Vedadero!!!!Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+        It has survived not only five centuries, but also the leap into electronic typesetting,
+        remaining essentially unchanged.
+    </p>
   
 
 </div>
