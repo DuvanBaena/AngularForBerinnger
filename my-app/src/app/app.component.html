@@ -1,24 +1,24 @@
-<h1 class="container bg-dark text-white text-center my-4 py-4">[ngClass]</h1>
+<h1 class="container bg-dark text-white text-center my-4 py-4">[ngFor]</h1>
 
-<div clas="container">
+<div class="container">
 
-    <button type="button" class="btn btn-dark mb-3" (click)="activo='primero'">First</button>
-
-    <button type="button" class="btn btn-danger mb-3" (click)="activo='segundo'">Second</button>
-
-    <p class="text-info d-none" [ngClass]="{'d-block':activo=='primero'}">Vedadero!!!!Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged.
-    </p>
-
-    <p class="text-danger d-none" [ngClass]="{'d-block':activo=='segundo'}">Vedadero!!!!Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
-        Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-        when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        It has survived not only five centuries, but also the leap into electronic typesetting,
-        remaining essentially unchanged.
-    </p>
-  
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Type</th>
+                <th scope="col">Name</th>
+                <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let people of Peoples; index as i">
+                <td scope="row">{{i+1}}</td>
+                <td>{{people.Type}}</td>
+                <td>{{people.Name}}</td> 
+                <td>{{people.Age}}</td>
+            </tr>
+        </tbody>
+    </table>
 
 </div>
