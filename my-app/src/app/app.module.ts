@@ -9,10 +9,15 @@ import { FooterComponent } from './footer/footer.component';
 import { BodyComponent } from './body/body.component';
 import { ContacComponent } from './contac/contac.component';
 import { Body2Component } from './body2/body2.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { NosotrosComponent } from './nosotros/nosotros.component';
 
 
 const routes: Routes = [
-  { path: 'Contact', component: ContacComponent }
+  { path: 'Contact', component: ContacComponent },
+  { path: 'Nosotros', component: NosotrosComponent },
+  { path: '', component: InicioComponent, pathMatch: 'full' },
+  { path: '**', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
@@ -22,7 +27,9 @@ const routes: Routes = [
     FooterComponent,
     BodyComponent,
     ContacComponent,
-    Body2Component
+    Body2Component,
+    InicioComponent,
+    NosotrosComponent
   ],
   imports: [
     BrowserModule,
